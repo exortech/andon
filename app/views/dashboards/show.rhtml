@@ -1,0 +1,10 @@
+<h1><%=h @dashboard.name %></h1>
+
+  <% for metric in @dashboard.metrics %>
+    <div class="metric <%=h metric.status %>">
+      <%=h metric.name %> - <%=h metric.value %>
+	</div>
+  <% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @dashboard %> |
+<%= link_to 'Back', :action => 'list' %>

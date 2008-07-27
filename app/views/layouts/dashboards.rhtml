@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Dashboards: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'scaffold' %>
+  <style type="text/css">
+body {
+	background-color: black;
+	color: lightgray;
+	font-family: Verdana Arial, sans-serif;
+	font-size: 48px;
+	margin: 0;
+}
+
+h1 {
+	text-align: center;
+	font-size: 1.1em;
+	margin: 0;
+	padding: 0.5em 1em;
+}
+
+.metric {
+	padding: 0.5em 1em;		
+}
+.metric:hover {
+	background-color: #333333;
+}
+
+.problem {
+	color: darkred;
+	font-weight: bold;
+}
+  </style>
+</head>
+<body>
+
+<%= yield  %>
+
+<p style="color: green"><%= flash[:notice] %></p>
+
+</body>
+</html>

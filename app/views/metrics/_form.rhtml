@@ -1,0 +1,8 @@
+<%= error_messages_for 'metric' %>
+
+<!--[form:metric]-->
+<p><label for="metric_name">Name: </label><%= text_field 'metric', 'name'  %></p>
+<p><label for="metric_provider">Provider: </label><%= select('metric', 'provider', [['CruiseControl', 'CruiseControlProvider'],['CruiseControlServer', 'CruiseControlServer']]) %></p>
+
+<!--[eoform:metric]-->
+

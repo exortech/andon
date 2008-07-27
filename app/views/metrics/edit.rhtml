@@ -1,0 +1,9 @@
+<h1>Editing metric</h1>
+
+<% form_tag :action => 'update', :id => @metric do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Save' %>
+<% end %>
+
+<%= link_to 'Show', :action => 'show', :id => @metric %> |
+<%= link_to 'Back', :controller => 'dashboards', :action => 'edit', :id => @metric.dashboard %>

@@ -1,0 +1,8 @@
+<% for column in Metric.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @metric.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @metric %> |
+<%= link_to 'Back', :controller => 'dashboards', :action => 'show', :id => @metric.dashboard %>

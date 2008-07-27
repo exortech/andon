@@ -1,0 +1,22 @@
+<h1>Dashboard</h1>
+
+<% form_tag :action => 'update', :id => @dashboard do %>
+  <%= render :partial => 'form', :object => @dashboard %>
+  <%= submit_tag 'Save' %>
+<% end %>
+
+<table>
+<% for metric in @dashboard.metrics %>
+  <tr>
+    <td><%=h metric.name %></td>
+    <td><%= link_to 'Edit', :controller => 'metrics', :action => 'edit', :id => metric %></td>
+    <td><%= link_to 'Delete', { :controller => 'metrics', :action => 'destroy', :id => metric }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= button_to "Add", :controller => 'metrics', :action => 'new' %>
+
+
+<%= link_to 'Show', :action => 'show', :id => @dashboard %> |
+<%= link_to 'Back', :action => 'list' %>

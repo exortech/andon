@@ -1,0 +1,27 @@
+<h1>Listing metrics</h1>
+
+<table>
+  <tr>
+  <% for column in Metric.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for metric in @metrics %>
+  <tr>
+  <% for column in Metric.content_columns %>
+    <td><%=h metric.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => metric %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => metric %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => metric }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @metric_pages.current.previous } if @metric_pages.current.previous %>
+<%= link_to 'Next page', { :page => @metric_pages.current.next } if @metric_pages.current.next %> 
+
+<br />
+
+<%= link_to 'New metric', :action => 'new' %>
